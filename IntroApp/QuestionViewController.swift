@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class QuestionViewController: UIViewController {
     
@@ -13,17 +14,18 @@ class QuestionViewController: UIViewController {
     var shuffledWordArray: [Dictionary<String, String>] = []  //シャッフルされた配列
     var nowNumber: Int=0  //現在の回答数現在の回答数
 
+    let realm = try! Realm()
+    var intro = IntroModel()
     
-    let saveData = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         answerTextField.text = ""
         isAnsweredLabel.isHidden=true//「回答が入力されていません！」を隠す
         
-        quizArray=["好きな食べ物はなんですか","ニックネームはなんですか","好きな曲はなんですか","好きなゲームはなんですか"]
+        //quizArray=["好きな食べ物はなんですか","ニックネームはなんですか","好きな曲はなんですか","好きなゲームはなんですか"]
+        quizArray=["好きな食べ物はなんですか","ニックネームはなんですか"]
     }
-    
     
     //viewが現れた時によばれる
     override func viewWillAppear(_ animated: Bool){
@@ -38,6 +40,10 @@ class QuestionViewController: UIViewController {
         }
         //回答していたら
         if isAnswered{
+            intro.ans = answerTextField.text!
+            try! realm.write {
+                realm.add(intro)
+            }
             //次の問題へ
             nowNumber += 1
             answerTextField.text = ""
@@ -48,6 +54,7 @@ class QuestionViewController: UIViewController {
                 questionLabel.text = quizArray[nowNumber]
                 //isAnsweredをfalseにする
                 isAnswered = false
+                isAnsweredLabel.isHidden=true
             } else {
                 //これ以上表示する問題がないので、Finishビューに遷移
                 self.performSegue(withIdentifier: "toFinishView", sender: nil)

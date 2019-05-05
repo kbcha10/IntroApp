@@ -14,6 +14,7 @@
 		C208BA69226AF33700C354A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BA67226AF33700C354A7 /* LaunchScreen.storyboard */; };
 		C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA70226B130600C354A7 /* QuestionViewController.swift */; };
 		C208BB5D227EF35400C354A7 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB5C227EF35400C354A7 /* IntroModel.swift */; };
+		C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB60227F42D200C354A7 /* DetailViewController.swift */; };
 		F09C59FC577686CA2D0FBC55 /* Pods_IntroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F91C8921EC5EBD17FEF87E1 /* Pods_IntroApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		C208BA6A226AF33700C354A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C208BA70226B130600C354A7 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		C208BB5C227EF35400C354A7 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
+		C208BB60227F42D200C354A7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				C208BA60226AF33500C354A7 /* ViewController.swift */,
 				C208BA62226AF33500C354A7 /* Main.storyboard */,
 				C208BA70226B130600C354A7 /* QuestionViewController.swift */,
+				C208BB60227F42D200C354A7 /* DetailViewController.swift */,
 				C208BA65226AF33700C354A7 /* Assets.xcassets */,
 				C208BA67226AF33700C354A7 /* LaunchScreen.storyboard */,
 				C208BA6A226AF33700C354A7 /* Info.plist */,
@@ -218,6 +221,7 @@
 			files = (
 				C208BB5D227EF35400C354A7 /* IntroModel.swift in Sources */,
 				C208BA61226AF33500C354A7 /* ViewController.swift in Sources */,
+				C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */,
 				C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */,
 				C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */,
 			);

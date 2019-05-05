@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class IntroModel: Object{
-    @objc dynamic var ans: String=""
+    @objc dynamic var ans: String = ""
 }
