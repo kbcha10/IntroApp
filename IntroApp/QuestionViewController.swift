@@ -44,6 +44,7 @@ class QuestionViewController: UIViewController {
             try! realm.write {
                 realm.add(intro)
             }
+            
             //次の問題へ
             nowNumber += 1
             answerTextField.text = ""
