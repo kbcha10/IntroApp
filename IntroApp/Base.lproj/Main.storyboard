@@ -68,7 +68,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonTapped" destination="Z2W-1Z-FfL" eventType="touchUpInside" id="zX0-wn-Del"/>
+                                    <action selector="nextButtonTapped:" destination="Z2W-1Z-FfL" eventType="touchUpInside" id="3Qr-bb-Y9a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wi-Xd-mHS">
@@ -92,7 +92,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +104,7 @@
                         <outlet property="isAnsweredLabel" destination="3Gt-2t-bjg" id="hD1-ma-KLB"/>
                         <outlet property="nextButton" destination="NMe-zu-XsU" id="Spu-ZZ-Fjr"/>
                         <outlet property="questionLabel" destination="7T4-Ey-aZf" id="gbC-8J-519"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toFinishView" id="r3r-hH-iLG"/>
+                        <segue destination="YjJ-TJ-P5U" kind="presentation" identifier="toFinishView" id="iDO-7O-o1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXg-j3-ZLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,7 +145,8 @@
                         <viewLayoutGuide key="safeArea" id="urO-QA-fgk"/>
                     </view>
                     <connections>
-                        <outlet property="titleLabel1" destination="KCo-Q7-VGw" id="Dn4-aV-noB"/>
+                        <outlet property="answerLabel" destination="KCo-Q7-VGw" id="gEH-OY-mBK"/>
+                        <outlet property="answerLabel2" destination="BBe-Xe-1sa" id="XqC-hu-9T4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhA-IG-Bfc" userLabel="First Responder" sceneMemberID="firstResponder"/>

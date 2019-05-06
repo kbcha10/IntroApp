@@ -3,7 +3,7 @@ import RealmSwift
 
 class QuestionViewController: UIViewController {
     
-    @IBOutlet var nextButton: UILabel!
+    @IBOutlet var nextButton: UIButton!
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var isAnsweredLabel: UILabel!
     @IBOutlet var answerTextField: UITextField!
@@ -14,8 +14,6 @@ class QuestionViewController: UIViewController {
     var shuffledWordArray: [Dictionary<String, String>] = []  //シャッフルされた配列
     var nowNumber: Int=0  //現在の回答数現在の回答数
 
-    let realm = try! Realm()
-    var intro = IntroModel()
     
     
     override func viewDidLoad() {
@@ -33,14 +31,17 @@ class QuestionViewController: UIViewController {
         questionLabel.text = quizArray[nowNumber]
     }
     
-    @IBAction func nextButtonTapped(){
+    @IBAction func nextButtonTapped(_ sender: Any){
         //回答したか確認
         if answerTextField.text != "" {
             isAnswered = true
         }
         //回答していたら
         if isAnswered{
+            let intro:IntroModel = IntroModel()
             intro.ans = answerTextField.text!
+            
+            let realm = try! Realm()
             try! realm.write {
                 realm.add(intro)
             }

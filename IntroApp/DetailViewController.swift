@@ -11,26 +11,19 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
 
-    
     let realm = try! Realm()
-    var ansArray: Results<IntroModel>!
-    @IBOutlet var titleLabel1:UILabel!
-    
+    var ansArray:Results<IntroModel>!
+    @IBOutlet var answerLabel: UILabel!
+    @IBOutlet var answerLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ansArray = realm.objects(IntroModel.self)
-        titleLabel1.text = ansArray[0].ans
+        
+        print(ansArray.count)
+        answerLabel.text = ansArray[ansArray.count-1].ans
+        answerLabel2.text = ansArray[0].ans
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
