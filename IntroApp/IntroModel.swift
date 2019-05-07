@@ -9,6 +9,16 @@
 import Foundation
 import RealmSwift
 
+class QuestionModel: Object{
+    @objc dynamic var question: String = ""
+    @objc dynamic var id = 0
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+}
+
 class IntroModel: Object{
     @objc dynamic var ans: String = ""
+    //let questions = List<QuestionModel>()
 }

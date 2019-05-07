@@ -23,6 +23,27 @@ class QuestionViewController: UIViewController {
         
         //quizArray=["好きな食べ物はなんですか","ニックネームはなんですか","好きな曲はなんですか","好きなゲームはなんですか"]
         quizArray=["好きな食べ物はなんですか","ニックネームはなんですか"]
+        
+        do{
+            let questions = [
+                QuestionModel(value: ["question":"好きな食べ物はなんですか"]),
+                QuestionModel(value: ["question":"ニックネームはなんですか" , "id":1]),
+                QuestionModel(value: ["question":"好きな曲はなんですか" , "id":2]),
+                QuestionModel(value: ["question":"好きなゲームはなんですか" , "id":3])
+            ]
+            
+            
+            /*let QuizRealm = try! Realm()
+            try! QuizRealm.write{
+                QuizRealm.add(questions)
+            }
+            
+            var quizArray:Results<IntroModel>!
+            quizArray = QuizRealm.objects(IntroModel.self)
+            print(quizArray.count)
+        } catch {
+            print("エラーだよ")
+        }*/
     }
     
     //viewが現れた時によばれる

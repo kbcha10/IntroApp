@@ -22,8 +22,16 @@ class DetailViewController: UIViewController {
         ansArray = realm.objects(IntroModel.self)
         
         print(ansArray.count)
-        answerLabel.text = ansArray[ansArray.count-1].ans
-        answerLabel2.text = ansArray[0].ans
+        do {
+            let realm2 = try Realm()
+            try! realm2.write {
+                //realm2.deleteAll()
+                print(ansArray.count)
+            }
+        } catch {
+        }
+        //answerLabel.text = ansArray[ansArray.count-1].ans
+        //answerLabel2.text = ansArray[0].ans
     }
 
 }
