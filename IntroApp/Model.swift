@@ -19,6 +19,10 @@ class QuestionModel: Object{
 }
 
 class IntroModel: Object{
+    let answer = List<AnswerModel>() 
+}
+
+class AnswerModel: Object{
     @objc dynamic var ans: String = ""
-    //let questions = List<QuestionModel>()
+    @objc dynamic var questionNum: Int = 0
 }

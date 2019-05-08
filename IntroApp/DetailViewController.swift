@@ -11,27 +11,26 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
 
-    let realm = try! Realm()
-    var ansArray:Results<IntroModel>!
+    var IntroArray:Results<IntroModel>!
+    var QuestionArray:Results<QuestionModel>!
+    
     @IBOutlet var answerLabel: UILabel!
     @IBOutlet var answerLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ansArray = realm.objects(IntroModel.self)
+        let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+        let realm = try! Realm(configuration:config2)
         
-        print(ansArray.count)
-        do {
-            let realm2 = try Realm()
-            try! realm2.write {
-                //realm2.deleteAll()
-                print(ansArray.count)
-            }
-        } catch {
-        }
-        //answerLabel.text = ansArray[ansArray.count-1].ans
-        //answerLabel2.text = ansArray[0].ans
+        IntroArray = realm.objects(IntroModel.self)
+        QuestionArray = realm.objects(QuestionModel.self)
+        
+        print(IntroArray.count)
+        
+        let num:Int = IntroArray[0].answer[0].questionNum
+        answerLabel.text = QuestionArray[num].question
+        answerLabel2.text = IntroArray[0].answer[0].ans
     }
 
 }

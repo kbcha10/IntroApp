@@ -13,8 +13,8 @@
 		C208BA66226AF33700C354A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208BA65226AF33700C354A7 /* Assets.xcassets */; };
 		C208BA69226AF33700C354A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BA67226AF33700C354A7 /* LaunchScreen.storyboard */; };
 		C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA70226B130600C354A7 /* QuestionViewController.swift */; };
-		C208BB5D227EF35400C354A7 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB5C227EF35400C354A7 /* IntroModel.swift */; };
 		C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB60227F42D200C354A7 /* DetailViewController.swift */; };
+		C208BB872283504400C354A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB862283504400C354A7 /* Model.swift */; };
 		F09C59FC577686CA2D0FBC55 /* Pods_IntroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F91C8921EC5EBD17FEF87E1 /* Pods_IntroApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +30,8 @@
 		C208BA68226AF33700C354A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C208BA6A226AF33700C354A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C208BA70226B130600C354A7 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		C208BB5C227EF35400C354A7 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		C208BB60227F42D200C354A7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C208BB862283504400C354A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		C208BA5D226AF33500C354A7 /* IntroApp */ = {
 			isa = PBXGroup;
 			children = (
-				C208BB5C227EF35400C354A7 /* IntroModel.swift */,
+				C208BB862283504400C354A7 /* Model.swift */,
 				C208BA5E226AF33500C354A7 /* AppDelegate.swift */,
 				C208BA60226AF33500C354A7 /* ViewController.swift */,
 				C208BA62226AF33500C354A7 /* Main.storyboard */,
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C208BB5D227EF35400C354A7 /* IntroModel.swift in Sources */,
+				C208BB872283504400C354A7 /* Model.swift in Sources */,
 				C208BA61226AF33500C354A7 /* ViewController.swift in Sources */,
 				C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */,
 				C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */,
