@@ -32,13 +32,19 @@ class QuestionViewController: UIViewController {
             QuestionModel(value: ["question":"好きなゲームはなんですか" , "id":3])
         ]
         
+        let f = DateFormatter()
+        f.timeStyle = .none
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        intro.today = f.string(from: Date())
+        
         try! realm.write{
             realm.add(questions)
             realm.add(intro)
         }
+        print(intro)
         
         quizArray = realm.objects(QuestionModel.self)
-    
     }
     
     //viewが現れた時によばれる
