@@ -19,8 +19,9 @@ class IntroduceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        let realm = try! Realm(configuration:config2)
+        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+        //let realm = try! Realm(configuration:config2)
+        let realm = try! Realm()
         
         IntroArray = realm.objects(IntroModel.self)
         tableView.register(UINib(nibName: "IntroduceTableViewCell", bundle: nil),forCellReuseIdentifier: "introCell")
@@ -44,12 +45,16 @@ class IntroduceTableViewController: UITableViewController {
         let num:Int = IntroArray[selectedIntro].answer[indexPath.row].questionNum
         cell.questionLabel!.text = QuestionArray[num].question
         cell.answerLabel!.text = IntroArray[selectedIntro].answer[indexPath.row].ans
-        print(IntroArray[selectedIntro].answer.count)
         return cell
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func pushedButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
     
     
 }

@@ -20,13 +20,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        let realm = try! Realm(configuration:config2)
+        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+        //let realm = try! Realm(configuration:config2)
+        let realm = try! Realm()
         
         IntroArray = realm.objects(IntroModel.self)
         QuestionArray = realm.objects(QuestionModel.self)
-        
-        print(IntroArray.count)
         
         let num:Int = IntroArray[0].answer[0].questionNum
         answerLabel.text = QuestionArray[num].question

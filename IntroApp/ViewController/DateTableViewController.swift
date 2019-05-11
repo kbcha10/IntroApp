@@ -19,12 +19,13 @@ class DateTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        let realm = try! Realm(configuration:config2)
+        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+        //let realm = try! Realm(configuration:config2)
+        
+        let realm = try! Realm()
         
         IntroArray = realm.objects(IntroModel.self)
         tableView.register(UINib(nibName: "DataTableViewCell", bundle: nil),forCellReuseIdentifier: "cell")
-        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,6 +49,9 @@ class DateTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         // 別の画面に遷移
         performSegue(withIdentifier: "toIntroduceTableView", sender: nil)
+    }
+    @IBAction func pushedButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

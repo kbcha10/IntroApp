@@ -17,32 +17,47 @@ class QuestionViewController: UIViewController {
     
     let intro = IntroModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         answerTextField.text = ""
         isAnsweredLabel.isHidden=true//「回答が入力されていません！」を隠す
         
-        let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        let realm = try! Realm(configuration:config2)
-        let questions = [
-            QuestionModel(value: ["question":"好きな食べ物はなんですか" , "id":0]),
-            QuestionModel(value: ["question":"ニックネームはなんですか" , "id":1]),
-            QuestionModel(value: ["question":"好きな曲はなんですか" , "id":2]),
-            QuestionModel(value: ["question":"好きなゲームはなんですか" , "id":3])
-        ]
+        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+        //let realm = try! Realm(configuration:config2)
+        let realm = try! Realm()
+        
+        
+        var IntroArray:Results<IntroModel>!
+        IntroArray = realm.objects(IntroModel.self)
+        let IntroCount = IntroArray.count
+        var QuestionArray:Results<QuestionModel>!
+        QuestionArray = realm.objects(QuestionModel.self)
+        let QuestionCount = QuestionArray.count
+        
+        if (QuestionCount<0){
+            let questions = [
+                QuestionModel(value: ["question":"好きな食べ物はなんですか" , "id":QuestionCount]),
+                QuestionModel(value: ["question":"ニックネームはなんですか" , "id":QuestionCount+1]),
+                QuestionModel(value: ["question":"好きな曲はなんですか" , "id":QuestionCount+2]),
+                QuestionModel(value: ["question":"好きなゲームはなんですか" , "id":QuestionCount+3])
+            ]
+            try! realm.write{
+                realm.add(questions)
+            }
+        }
         
         let f = DateFormatter()
         f.timeStyle = .none
         f.dateStyle = .medium
         f.locale = Locale(identifier: "ja_JP")
+        
+        intro.id = IntroCount
         intro.today = f.string(from: Date())
         
         try! realm.write{
-            realm.add(questions)
             realm.add(intro)
         }
-        print(intro)
         
         quizArray = realm.objects(QuestionModel.self)
     }
@@ -65,11 +80,12 @@ class QuestionViewController: UIViewController {
             answer.ans = answerTextField.text!
             answer.questionNum=nowNumber
             
-            let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-            let realm = try! Realm(configuration:config2)
+            //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+            //let realm = try! Realm(configuration:config2)
+            let realm = try! Realm()
+            
             try! realm.write {
                 intro.answer.append(answer)
-                print(intro.answer)
             }
             
             //次の問題へ
@@ -85,6 +101,7 @@ class QuestionViewController: UIViewController {
                 isAnsweredLabel.isHidden=true
             } else {
                 //これ以上表示する問題がないので、Finishビューに遷移
+                nowNumber = 0
                 self.performSegue(withIdentifier: "toFinishView", sender: nil)
             }
         } else {
@@ -104,6 +121,7 @@ class QuestionViewController: UIViewController {
             isAnswered = false
         } else {
             //これ以上表示する問題がないので、Finishビューに遷移
+            nowNumber = 0
             self.performSegue(withIdentifier: "toFinishView", sender: nil)
         }
     }

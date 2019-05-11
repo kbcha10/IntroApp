@@ -40,6 +40,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="bDz-Qq-QMJ" id="2p1-GQ-mlP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +159,7 @@
         <!--Date Table View Controller-->
         <scene sceneID="b2X-kL-Hex">
             <objects>
+                <exit id="KmY-LO-xhH" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jih-ut-zBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="WJ2-rE-GRB" customClass="DateTableViewController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vie-Py-Mp0">
@@ -182,10 +186,16 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WJ2-rE-GRB" id="x4M-ZS-kmg"/>
-                            <outlet property="delegate" destination="WJ2-rE-GRB" id="irj-oD-Xs2"/>
+                            <outlet property="delegate" destination="WJ2-rE-GRB" id="egR-zY-Xki"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g0s-yp-Z5L"/>
+                    <navigationItem key="navigationItem" id="g0s-yp-Z5L">
+                        <barButtonItem key="leftBarButtonItem" title="ホーム" id="0nH-Ul-Ci8">
+                            <connections>
+                                <segue destination="KmY-LO-xhH" kind="unwind" unwindAction="backWithSegue:" id="mip-fh-DBr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="wdA-gA-qAq" kind="show" identifier="toIntroduceTableView" id="Ctj-vM-4uB"/>
                     </connections>
@@ -219,7 +229,7 @@
                     <navigationItem key="navigationItem" title="自己紹介" id="1DJ-fM-m1N">
                         <barButtonItem key="leftBarButtonItem" title="もどる" id="Sz0-nL-R1F">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="lhr-a2-bhW"/>
+                                <action selector="pushedButton:" destination="Nvg-sy-gsu" id="acU-ID-NbR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
