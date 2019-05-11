@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TopViewController: UIViewController {
 
     @IBOutlet var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Realmのファイルの場所読み込み
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     @IBAction func back(segue: UIStoryboardSegue){

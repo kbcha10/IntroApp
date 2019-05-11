@@ -22,14 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < 1) {
-                    
                 }
         })
         
         Realm.Configuration.defaultConfiguration = config
-        
-        
         let realm = try! Realm()
+        
         // Override point for customization after application launch.
         return true
     }

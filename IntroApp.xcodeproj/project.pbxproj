@@ -13,7 +13,6 @@
 		C208BA66226AF33700C354A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208BA65226AF33700C354A7 /* Assets.xcassets */; };
 		C208BA69226AF33700C354A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BA67226AF33700C354A7 /* LaunchScreen.storyboard */; };
 		C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA70226B130600C354A7 /* QuestionViewController.swift */; };
-		C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB60227F42D200C354A7 /* DetailViewController.swift */; };
 		C208BB872283504400C354A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB862283504400C354A7 /* Model.swift */; };
 		C208BB8E2283C1E700C354A7 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BB8C2283C1E700C354A7 /* DataTableViewCell.swift */; };
 		C208BB8F2283C1E700C354A7 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C208BB8D2283C1E700C354A7 /* DataTableViewCell.xib */; };
@@ -37,7 +36,6 @@
 		C208BA68226AF33700C354A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C208BA6A226AF33700C354A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C208BA70226B130600C354A7 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		C208BB60227F42D200C354A7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C208BB862283504400C354A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C208BB8C2283C1E700C354A7 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		C208BB8D2283C1E700C354A7 /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				C208BA60226AF33500C354A7 /* ViewController.swift */,
 				C208BA70226B130600C354A7 /* QuestionViewController.swift */,
 				C208BB9E2284139C00C354A7 /* TopViewController.swift */,
-				C208BB60227F42D200C354A7 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -261,7 +258,6 @@
 				C208BB872283504400C354A7 /* Model.swift in Sources */,
 				C208BB8E2283C1E700C354A7 /* DataTableViewCell.swift in Sources */,
 				C208BA61226AF33500C354A7 /* ViewController.swift in Sources */,
-				C208BB61227F42D200C354A7 /* DetailViewController.swift in Sources */,
 				C208BB9F2284139C00C354A7 /* TopViewController.swift in Sources */,
 				C208BB932283C6D000C354A7 /* DateTableViewController.swift in Sources */,
 				C208BB972283FF2E00C354A7 /* IntroduceTableViewController.swift in Sources */,

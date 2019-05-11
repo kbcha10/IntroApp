@@ -114,53 +114,9 @@
             </objects>
             <point key="canvasLocation" x="847" y="134"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="zbq-7H-4op">
-            <objects>
-                <viewController id="YjJ-TJ-P5U" customClass="DetailViewController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Ix-3a-uIP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCo-Q7-VGw">
-                                <rect key="frame" x="107" y="187" width="160" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azA-Rg-LOr">
-                                <rect key="frame" x="107" y="329" width="160" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-Xe-1sa">
-                                <rect key="frame" x="107" y="260" width="160" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="urO-QA-fgk"/>
-                    </view>
-                    <connections>
-                        <outlet property="answerLabel" destination="KCo-Q7-VGw" id="gEH-OY-mBK"/>
-                        <outlet property="answerLabel2" destination="BBe-Xe-1sa" id="XqC-hu-9T4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhA-IG-Bfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1506" y="134"/>
-        </scene>
         <!--Date Table View Controller-->
         <scene sceneID="b2X-kL-Hex">
             <objects>
-                <exit id="KmY-LO-xhH" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jih-ut-zBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="WJ2-rE-GRB" customClass="DateTableViewController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vie-Py-Mp0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -200,6 +156,8 @@
                         <segue destination="wdA-gA-qAq" kind="show" identifier="toIntroduceTableView" id="Ctj-vM-4uB"/>
                     </connections>
                 </tableViewController>
+                <exit id="KmY-LO-xhH" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jih-ut-zBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="846" y="804"/>
         </scene>

@@ -13,22 +13,22 @@ import RealmSwift
 
 class IntroduceTableViewController: UITableViewController {
     
+    //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+    //let realm = try! Realm(configuration:config2)
+    let realm = try! Realm()
+    
+    //IntroモデルとQuestionモデルを読み込み
     var IntroArray:Results<IntroModel>!
     var QuestionArray:Results<QuestionModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        //let realm = try! Realm(configuration:config2)
-        let realm = try! Realm()
-        
-        IntroArray = realm.objects(IntroModel.self)
-        tableView.register(UINib(nibName: "IntroduceTableViewCell", bundle: nil),forCellReuseIdentifier: "introCell")
-        
+        //IntroモデルとQuestionモデルを読み込み
         IntroArray = realm.objects(IntroModel.self)
         QuestionArray = realm.objects(QuestionModel.self)
         
+        tableView.register(UINib(nibName: "IntroduceTableViewCell", bundle: nil),forCellReuseIdentifier: "introCell")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

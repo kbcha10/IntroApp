@@ -12,17 +12,16 @@ import RealmSwift
 var selectedIntro: Int!
 
 class DateTableViewController: UITableViewController {
+    
+    //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
+    //let realm = try! Realm(configuration:config2)
+    let realm = try! Realm()
 
     var IntroArray:Results<IntroModel>!
     var selectIntro: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //let config2 = Realm.Configuration(inMemoryIdentifier: "inMemory")
-        //let realm = try! Realm(configuration:config2)
-        
-        let realm = try! Realm()
         
         IntroArray = realm.objects(IntroModel.self)
         tableView.register(UINib(nibName: "DataTableViewCell", bundle: nil),forCellReuseIdentifier: "cell")
