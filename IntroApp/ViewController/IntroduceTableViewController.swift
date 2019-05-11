@@ -51,10 +51,13 @@ class IntroduceTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func pushedButton(_ sender: Any) {
+    /*@IBAction func pushedButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
+    }*/
 
+    @IBAction func backDate(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
 }

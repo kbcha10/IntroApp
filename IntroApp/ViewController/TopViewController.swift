@@ -10,8 +10,6 @@ import UIKit
 import RealmSwift
 
 class TopViewController: UIViewController {
-
-    @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

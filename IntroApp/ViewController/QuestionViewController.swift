@@ -79,36 +79,28 @@ class QuestionViewController: UIViewController {
         //回答していたら
         if isAnswered{
             
+            //Answerモデルの登録
             let answer = AnswerModel()
             answer.ans = answerTextField.text!
             answer.questionNum=nowNumber
-            
             try! realm.write {
                 intro.answer.append(answer)
             }
             
-            //次の問題へ
-            nowNumber += 1
-            answerTextField.text = ""
+            nextQuestion()
             
-            //次の問題を表示するか
-            if nowNumber < quizArray.count{
-                //次の問題を表示
-                questionLabel.text = quizArray[nowNumber].question
-                //isAnsweredをfalseにする
-                isAnswered = false
-                isAnsweredLabel.isHidden=true
-            } else {
-                //これ以上表示する問題がないので、Finishビューに遷移
-                nowNumber = 0
-                self.performSegue(withIdentifier: "toFinishView", sender: nil)
-            }
         } else {
-            //「入力されていません！」を表示する
+            //「入力されていません！」
             isAnsweredLabel.isHidden=false
         }
     }
+    
     @IBAction func skipButtonTapped(){
+        nextQuestion()
+    }
+    
+    //質問画面
+    func nextQuestion(){
         nowNumber += 1
         answerTextField.text = ""
         
@@ -118,6 +110,7 @@ class QuestionViewController: UIViewController {
             questionLabel.text = quizArray[nowNumber].question
             //isAnsweredをfalseにする
             isAnswered = false
+            isAnsweredLabel.isHidden=true
         } else {
             //これ以上表示する問題がないので、Finishビューに遷移
             nowNumber = 0
