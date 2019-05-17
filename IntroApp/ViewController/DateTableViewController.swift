@@ -41,6 +41,7 @@ class DateTableViewController: UITableViewController {
         
         return cell
     }
+    //選択された日付の自己紹介を次の画面で表示
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // タップされたセルの行番号を出力
         selectedIntro=indexPath.row

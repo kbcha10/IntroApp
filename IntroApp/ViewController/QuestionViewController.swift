@@ -18,8 +18,6 @@ class QuestionViewController: UIViewController {
     var isAnswered: Bool = false   //そのページの問題に回答しているか（文字が入力されているか）
     var shuffledWordArray: [Dictionary<String, String>] = []  //シャッフルされた配列
     var nowNumber: Int=0  //現在の回答数
-
-    var quizArray:Results<QuestionModel>!
     
     let intro = IntroModel()
     
@@ -62,13 +60,13 @@ class QuestionViewController: UIViewController {
         
         //画面の初期設定
         isAnsweredLabel.isHidden=true//「回答が入力されていません！」を隠す
-        quizArray = realm.objects(QuestionModel.self)
+        QuestionArray = realm.objects(QuestionModel.self)
     }
     
     //viewが現れた時によばれる
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        questionLabel.text = quizArray[nowNumber].question
+        questionLabel.text = QuestionArray[nowNumber].question
     }
     
     @IBAction func nextButtonTapped(_ sender: Any){
@@ -105,9 +103,9 @@ class QuestionViewController: UIViewController {
         answerTextField.text = ""
         
         //次の問題を表示するか
-        if nowNumber < quizArray.count{
+        if nowNumber < QuestionArray.count{
             //次の問題を表示
-            questionLabel.text = quizArray[nowNumber].question
+            questionLabel.text = QuestionArray[nowNumber].question
             //isAnsweredをfalseにする
             isAnswered = false
             isAnsweredLabel.isHidden=true

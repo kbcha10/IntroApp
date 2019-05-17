@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C200A10E228EA7C100757F04 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A10C228EA7C100757F04 /* QuestionCell.swift */; };
+		C200A10F228EA7C100757F04 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200A10D228EA7C100757F04 /* QuestionCell.xib */; };
+		C200A111228EACD900757F04 /* QuestionChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A110228EACD900757F04 /* QuestionChoiceController.swift */; };
+		C200A113228ED60D00757F04 /* QuestionAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A112228ED60D00757F04 /* QuestionAddController.swift */; };
+		C200A115228F37C400757F04 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A114228F37C400757F04 /* NextViewController.swift */; };
 		C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA5E226AF33500C354A7 /* AppDelegate.swift */; };
 		C208BA61226AF33500C354A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA60226AF33500C354A7 /* ViewController.swift */; };
 		C208BA64226AF33500C354A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BA62226AF33500C354A7 /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 		15873FEE195477994E79693B /* Pods-IntroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntroApp.debug.xcconfig"; path = "Target Support Files/Pods-IntroApp/Pods-IntroApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6F91C8921EC5EBD17FEF87E1 /* Pods_IntroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D4A9244639A16DAE6A268 /* Pods-IntroApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntroApp.release.xcconfig"; path = "Target Support Files/Pods-IntroApp/Pods-IntroApp.release.xcconfig"; sourceTree = "<group>"; };
+		C200A10C228EA7C100757F04 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		C200A10D228EA7C100757F04 /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		C200A110228EACD900757F04 /* QuestionChoiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceController.swift; sourceTree = "<group>"; };
+		C200A112228ED60D00757F04 /* QuestionAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAddController.swift; sourceTree = "<group>"; };
+		C200A114228F37C400757F04 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		C208BA5B226AF33500C354A7 /* IntroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208BA5E226AF33500C354A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C208BA60226AF33500C354A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +125,9 @@
 				C208BB962283FF2E00C354A7 /* IntroduceTableViewController.swift */,
 				C208BA60226AF33500C354A7 /* ViewController.swift */,
 				C208BA70226B130600C354A7 /* QuestionViewController.swift */,
+				C200A110228EACD900757F04 /* QuestionChoiceController.swift */,
+				C200A114228F37C400757F04 /* NextViewController.swift */,
+				C200A112228ED60D00757F04 /* QuestionAddController.swift */,
 				C208BB9E2284139C00C354A7 /* TopViewController.swift */,
 			);
 			path = ViewController;
@@ -125,6 +138,8 @@
 			children = (
 				C208BB8C2283C1E700C354A7 /* DataTableViewCell.swift */,
 				C208BB8D2283C1E700C354A7 /* DataTableViewCell.xib */,
+				C200A10C228EA7C100757F04 /* QuestionCell.swift */,
+				C200A10D228EA7C100757F04 /* QuestionCell.xib */,
 				C208BB9A2283FFB100C354A7 /* IntroduceTableViewCell.swift */,
 				C208BB9B2283FFB100C354A7 /* IntroduceTableViewCell.xib */,
 			);
@@ -192,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C208BA69226AF33700C354A7 /* LaunchScreen.storyboard in Resources */,
+				C200A10F228EA7C100757F04 /* QuestionCell.xib in Resources */,
 				C208BA66226AF33700C354A7 /* Assets.xcassets in Resources */,
 				C208BA64226AF33500C354A7 /* Main.storyboard in Resources */,
 				C208BB8F2283C1E700C354A7 /* DataTableViewCell.xib in Resources */,
@@ -259,11 +275,15 @@
 				C208BB8E2283C1E700C354A7 /* DataTableViewCell.swift in Sources */,
 				C208BA61226AF33500C354A7 /* ViewController.swift in Sources */,
 				C208BB9F2284139C00C354A7 /* TopViewController.swift in Sources */,
+				C200A111228EACD900757F04 /* QuestionChoiceController.swift in Sources */,
 				C208BB932283C6D000C354A7 /* DateTableViewController.swift in Sources */,
+				C200A115228F37C400757F04 /* NextViewController.swift in Sources */,
 				C208BB972283FF2E00C354A7 /* IntroduceTableViewController.swift in Sources */,
 				C208BB9C2283FFB100C354A7 /* IntroduceTableViewCell.swift in Sources */,
 				C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */,
 				C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */,
+				C200A10E228EA7C100757F04 /* QuestionCell.swift in Sources */,
+				C200A113228ED60D00757F04 /* QuestionAddController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
