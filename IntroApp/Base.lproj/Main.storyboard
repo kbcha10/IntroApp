@@ -32,9 +32,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="自己紹介する"/>
-                                <connections>
-                                    <segue destination="Z2W-1Z-FfL" kind="presentation" id="Yej-2C-5yK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0n-fr-ytw">
                                 <rect key="frame" x="120" y="534" width="175" height="50"/>
@@ -53,98 +50,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="58"/>
-        </scene>
-        <!--質問を選ぶ-->
-        <scene sceneID="kBf-cF-xPw">
-            <objects>
-                <tableViewController id="ftX-t5-Ec1" customClass="QuestionChoiceController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H14-nO-TbK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="12L-Ue-QX8" customClass="QuestionCell" customModule="IntroApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="12L-Ue-QX8" id="Af6-tN-tmC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ftX-t5-Ec1" id="lNy-Za-sVQ"/>
-                            <outlet property="delegate" destination="ftX-t5-Ec1" id="mnT-py-CoJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="質問を選ぶ" id="QIf-Rq-1gu">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="os5-1o-g1I"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C0Z-Mp-6cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1497" y="-678"/>
-        </scene>
-        <!--Question Add Controller-->
-        <scene sceneID="pjq-Ee-UQT">
-            <objects>
-                <viewController id="kza-s0-qTy" customClass="QuestionAddController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bf3-0D-8Py">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="質問を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQv-TY-DCb">
-                                <rect key="frame" x="96" y="317" width="222" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaM-bW-AGh">
-                                <rect key="frame" x="153" y="542" width="109" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.66563117520000004" blue="0.20745933220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="追加">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addQuestion" destination="kza-s0-qTy" eventType="touchUpInside" id="Dku-wy-Cja"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 質問が入力されていません！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkb-W3-NhQ">
-                                <rect key="frame" x="90" y="510" width="234" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOH-QO-BrW">
-                                <rect key="frame" x="96" y="441" width="222" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-uK-YOU">
-                                <rect key="frame" x="156" y="611" width="102" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="キャンセル"/>
-                                <connections>
-                                    <action selector="pushCancel" destination="kza-s0-qTy" eventType="touchUpInside" id="C2F-mH-jkY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hor-Sz-vId"/>
-                    </view>
-                    <connections>
-                        <outlet property="questionTextField" destination="EOH-QO-BrW" id="urC-j8-HIh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sTW-yY-eAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2254" y="-579"/>
         </scene>
         <!--質問を選ぶ-->
         <scene sceneID="lJ1-GZ-pIa">
@@ -181,6 +86,9 @@
                                 <state key="normal" title="自己紹介を始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="starIntroduction" destination="dcU-e6-5ZH" eventType="touchUpInside" id="lgl-Kx-gMe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,11 +103,27 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="eoM-Tk-fZg" id="TJA-vd-OHG"/>
+                        <segue destination="Z2W-1Z-FfL" kind="presentation" identifier="toQuestionView" id="lOD-C4-qEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD4-wv-tlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1523.1884057971015" y="54.910714285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mfr-g9-34c">
+            <objects>
+                <viewController id="319-8H-vsR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mnd-4s-EGb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TcN-XR-ZPt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dne-1E-MKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2323" y="55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7jX-pT-T9S">
@@ -356,7 +280,7 @@
                     <navigationItem key="navigationItem" title="自己紹介" id="1DJ-fM-m1N">
                         <barButtonItem key="leftBarButtonItem" title="もどる" id="Sz0-nL-R1F">
                             <connections>
-                                <action selector="backDate" destination="Nvg-sy-gsu" id="cRd-K7-jU9"/>
+                                <action selector="backToDate" destination="Nvg-sy-gsu" id="gwr-10-Ytm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

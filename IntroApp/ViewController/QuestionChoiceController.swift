@@ -6,6 +6,9 @@
 //  Copyright © 2019 林香穂. All rights reserved.
 //
 
+
+//セルのチェック管理に注意
+
 import UIKit
 import RealmSwift
 
@@ -17,6 +20,7 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
     
     //Questionモデルを読み込み
     var QuestionArray:Results<QuestionModel>!
+    var IntroArray:Results<IntroModel>!
     var questionNum: [Int] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +28,26 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         QuestionArray = realm.objects(QuestionModel.self)
+        IntroArray = realm.objects(IntroModel.self)
+        
+        //Questionモデルに何も質問がなければデフォルトの質問を追加
+        if (QuestionArray.count<1){
+            let firstQuestions = [
+                QuestionModel(value: ["question":"好きな食べ物はなんですか" , "id":0]),
+                QuestionModel(value: ["question":"ニックネームはなんですか" , "id":1]),
+                QuestionModel(value: ["question":"好きな曲はなんですか" , "id":2]),
+                QuestionModel(value: ["question":"好きなゲームはなんですか" , "id":3])
+            ]
+            try! realm.write{
+                realm.add(firstQuestions)
+            }
+        }
+        
+        //セルのチェック管理初期値
+        for i in 0..<QuestionArray.count{
+            questionNum.append(0)
+        }
+        
         tableView.register(UINib(nibName: "QuestionCell", bundle: nil),forCellReuseIdentifier: "questionCell")
     }
     override func didReceiveMemoryWarning() {
@@ -37,7 +61,6 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
     
     // セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        questionNum=[]
         return 1
     }
     
@@ -55,10 +78,7 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionCell
         cell.questionLabel!.text = QuestionArray[indexPath.row].question
-        if (cell.isChecked){
-            questionNum.append(indexPath.row)
-        }
-        print(questionNum)
+        
         return cell
     }
     
@@ -72,15 +92,17 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.cellForRow(at:indexPath)
         
         if cell?.accessoryType != .checkmark {
-            // チェックマークを入れる
+            // チェックマークを入れる&チェック管理配列の更新
             cell?.accessoryType = .checkmark
+            questionNum[indexPath.row]=1
         } else {
             cell?.accessoryType = .none
+            questionNum[indexPath.row]=0
         }
     }
     
+    //新しい質問の追加
     @IBAction func displayAlert() {
-        
         let alert = UIAlertController(title: "質問を追加", message: "追加したい質問を入力してください", preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
         let okayButton = UIAlertAction(title: "追加", style: UIAlertAction.Style.default, handler: {[weak alert] (action) -> Void in
@@ -92,17 +114,17 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
                 return
             }
             
-            //OKボタンを押した時に質問をRealmに保存
+            //追加ボタンを押した時に質問をRealmに保存
             for text in textFields {
-                let QuestionCount = self.QuestionArray.count
                 let question = QuestionModel()
                 question.question = text.text!
-                question.id=QuestionCount
+                question.id=self.QuestionArray.count
                 try! self.realm.write {
                     self.realm.add(question)
                 }
-                //テーブルに反映
+                //テーブルに反映&チェック管理配列の更新
                 self.tableView.reloadData()
+                self.questionNum.append(0)
             }
         })
         alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
@@ -113,6 +135,30 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
         alert.addAction(cancelButton)
         
         present(alert, animated: true, completion: nil)
+    }
+    @IBAction func starIntroduction(){
+        //新しいIntroモデルの登録
+        let intro = IntroModel()
+        let f = DateFormatter()
+        f.timeStyle = .none
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        intro.id = IntroArray.count
+        intro.today = f.string(from: Date())
+        try! realm.write{
+            realm.add(intro)
+        }
+        
+        for i in 0..<questionNum.count{
+            if(questionNum[i]==1){
+                let answer = AnswerModel()
+                answer.questionNum=i
+                try! realm.write {
+                    intro.answer.append(answer)
+                }
+            }
+        }
+        self.performSegue(withIdentifier: "toQuestionView", sender: nil)
     }
 }
     

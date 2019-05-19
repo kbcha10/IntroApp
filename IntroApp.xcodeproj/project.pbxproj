@@ -10,7 +10,6 @@
 		C200A10E228EA7C100757F04 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A10C228EA7C100757F04 /* QuestionCell.swift */; };
 		C200A10F228EA7C100757F04 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200A10D228EA7C100757F04 /* QuestionCell.xib */; };
 		C200A111228EACD900757F04 /* QuestionChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A110228EACD900757F04 /* QuestionChoiceController.swift */; };
-		C200A113228ED60D00757F04 /* QuestionAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A112228ED60D00757F04 /* QuestionAddController.swift */; };
 		C200A115228F37C400757F04 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A114228F37C400757F04 /* NextViewController.swift */; };
 		C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA5E226AF33500C354A7 /* AppDelegate.swift */; };
 		C208BA61226AF33500C354A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA60226AF33500C354A7 /* ViewController.swift */; };
@@ -36,7 +35,6 @@
 		C200A10C228EA7C100757F04 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		C200A10D228EA7C100757F04 /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		C200A110228EACD900757F04 /* QuestionChoiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceController.swift; sourceTree = "<group>"; };
-		C200A112228ED60D00757F04 /* QuestionAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAddController.swift; sourceTree = "<group>"; };
 		C200A114228F37C400757F04 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		C208BA5B226AF33500C354A7 /* IntroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208BA5E226AF33500C354A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				C208BA70226B130600C354A7 /* QuestionViewController.swift */,
 				C200A110228EACD900757F04 /* QuestionChoiceController.swift */,
 				C200A114228F37C400757F04 /* NextViewController.swift */,
-				C200A112228ED60D00757F04 /* QuestionAddController.swift */,
 				C208BB9E2284139C00C354A7 /* TopViewController.swift */,
 			);
 			path = ViewController;
@@ -283,7 +280,6 @@
 				C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */,
 				C208BA71226B130600C354A7 /* QuestionViewController.swift in Sources */,
 				C200A10E228EA7C100757F04 /* QuestionCell.swift in Sources */,
-				C200A113228ED60D00757F04 /* QuestionAddController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
