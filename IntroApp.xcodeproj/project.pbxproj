@@ -110,8 +110,8 @@
 				C208BB862283504400C354A7 /* Model.swift */,
 				C208BA5E226AF33500C354A7 /* AppDelegate.swift */,
 				C208BB982283FF5700C354A7 /* ViewController */,
-				C208BA62226AF33500C354A7 /* Main.storyboard */,
 				C208BA65226AF33700C354A7 /* Assets.xcassets */,
+				C208BA62226AF33500C354A7 /* Main.storyboard */,
 				C208BA67226AF33700C354A7 /* LaunchScreen.storyboard */,
 				C208BA6A226AF33700C354A7 /* Info.plist */,
 			);

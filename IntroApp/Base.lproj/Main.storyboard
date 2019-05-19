@@ -59,7 +59,7 @@
             <objects>
                 <tableViewController id="ftX-t5-Ec1" customClass="QuestionChoiceController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H14-nO-TbK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -83,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0Z-Mp-6cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-579"/>
+            <point key="canvasLocation" x="1497" y="-678"/>
         </scene>
         <!--Question Add Controller-->
         <scene sceneID="pjq-Ee-UQT">
@@ -149,18 +149,30 @@
         <!--質問を選ぶ-->
         <scene sceneID="lJ1-GZ-pIa">
             <objects>
-                <viewController id="dcU-e6-5ZH" customClass="ViewController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dcU-e6-5ZH" customClass="QuestionChoiceController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n3H-NB-iMZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9u-XA-61W">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoM-Tk-fZg">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Udz-ym-dq4" customClass="questionCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Udz-ym-dq4" id="g7F-w3-h64">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="ftX-t5-Ec1" kind="embed" id="yNz-pK-G8c"/>
+                                    <outlet property="dataSource" destination="dcU-e6-5ZH" id="n1e-Rk-3Ih"/>
+                                    <outlet property="delegate" destination="dcU-e6-5ZH" id="RuW-tX-nJI"/>
                                 </connections>
-                            </containerView>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osG-Pu-YpM">
                                 <rect key="frame" x="0.0" y="831" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,10 +189,13 @@
                     <navigationItem key="navigationItem" title="質問を選ぶ" id="Ys2-dE-pCH">
                         <barButtonItem key="rightBarButtonItem" title="＋" id="IZT-FK-iR4">
                             <connections>
-                                <segue destination="kza-s0-qTy" kind="presentation" id="jaA-HH-gmW"/>
+                                <action selector="displayAlert" destination="dcU-e6-5ZH" id="xkB-ko-WEz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="eoM-Tk-fZg" id="TJA-vd-OHG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD4-wv-tlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

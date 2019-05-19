@@ -20,26 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btw-Un-e3O">
-                        <rect key="frame" x="47" y="8" width="257" height="27"/>
+                        <rect key="frame" x="16" y="8" width="257" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta8-DQ-nqv">
-                        <rect key="frame" x="4" y="-3" width="40" height="48"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <state key="normal" title="○"/>
-                        <connections>
-                            <action selector="pushCheck" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wa0-lg-bYf"/>
-                        </connections>
-                    </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="checkButton" destination="Ta8-DQ-nqv" id="Qyd-Z9-xpU"/>
                 <outlet property="questionLabel" destination="btw-Un-e3O" id="yKc-jL-3gU"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
