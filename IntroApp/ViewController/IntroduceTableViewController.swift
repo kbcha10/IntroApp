@@ -54,6 +54,8 @@ class IntroduceTableViewController: UITableViewController {
     @IBAction func backToDate(){
         self.navigationController?.popViewController(animated: true)
     }
-    
+    @IBAction func rightSwiped() {
+        backToDate()
+    }
     
 }

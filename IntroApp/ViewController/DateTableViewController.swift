@@ -30,7 +30,15 @@ class DateTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    //セル削除
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! realm.write {
+                realm.delete(realm.objects(IntroModel.self)[indexPath.row])
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return IntroArray.count
     }

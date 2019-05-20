@@ -82,10 +82,10 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    // セクションヘッダの高さ
+    /*// セクションヘッダの高さ
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
-    }
+    }*/
     
     //セル選択時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -99,6 +99,31 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
             cell?.accessoryType = .none
             questionNum[indexPath.row]=0
         }
+    }
+    
+    @IBAction func starIntroduction(){
+        //新しいIntroモデルの登録
+        let intro = IntroModel()
+        let f = DateFormatter()
+        f.timeStyle = .none
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        intro.id = IntroArray.count
+        intro.today = f.string(from: Date())
+        try! realm.write{
+            realm.add(intro)
+        }
+        
+        for i in 0..<questionNum.count{
+            if(questionNum[i]==1){
+                let answer = AnswerModel()
+                answer.questionNum=i
+                try! realm.write {
+                    intro.answer.append(answer)
+                }
+            }
+        }
+        self.performSegue(withIdentifier: "toQuestionView", sender: nil)
     }
     
     //新しい質問の追加
@@ -135,30 +160,6 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
         alert.addAction(cancelButton)
         
         present(alert, animated: true, completion: nil)
-    }
-    @IBAction func starIntroduction(){
-        //新しいIntroモデルの登録
-        let intro = IntroModel()
-        let f = DateFormatter()
-        f.timeStyle = .none
-        f.dateStyle = .medium
-        f.locale = Locale(identifier: "ja_JP")
-        intro.id = IntroArray.count
-        intro.today = f.string(from: Date())
-        try! realm.write{
-            realm.add(intro)
-        }
-        
-        for i in 0..<questionNum.count{
-            if(questionNum[i]==1){
-                let answer = AnswerModel()
-                answer.questionNum=i
-                try! realm.write {
-                    intro.answer.append(answer)
-                }
-            }
-        }
-        self.performSegue(withIdentifier: "toQuestionView", sender: nil)
     }
 }
     
