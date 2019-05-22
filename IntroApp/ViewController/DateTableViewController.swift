@@ -35,6 +35,12 @@ class DateTableViewController: UITableViewController {
         if editingStyle == .delete {
             try! realm.write {
                 realm.delete(realm.objects(IntroModel.self)[indexPath.row])
+                for i in indexPath.row..<IntroArray.count{
+                    print(indexPath.row)
+                    print(IntroArray.count)
+                    realm.objects(IntroModel.self)[i].id = realm.objects(IntroModel.self)[i].id-1
+                    print(realm.objects(IntroModel.self)[i].id)
+                }
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

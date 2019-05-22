@@ -27,9 +27,7 @@ class QuestionViewController: UIViewController {
         ////////IntroモデルとQuestionモデルの読み込み////////
         IntroArray = realm.objects(IntroModel.self)
         QuestionArray = realm.objects(QuestionModel.self)
-        if(IntroArray.count>0){
-            intro = IntroArray.last!
-        }
+        intro = IntroArray[IntroArray.count-1]
         //////////////////////////////////////////////////
         
         ////////IntroモデルとQuestionモデルのモデルの数////////  <-プライマリキーの値の設定に使うよ

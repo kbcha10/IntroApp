@@ -12,9 +12,6 @@ import RealmSwift
 class QuestionModel: Object{
     @objc dynamic var question: String = ""
     @objc dynamic var id = 0
-    override static func primaryKey() -> String? {
-        return "id"
-    }
     
 }
 
@@ -22,9 +19,6 @@ class IntroModel: Object{
     let answer = List<AnswerModel>()
     @objc dynamic var today: String = ""
     @objc dynamic var id = 0
-    override static func primaryKey() -> String? {
-        return "id"
-    }
 }
 
 class AnswerModel: Object{
