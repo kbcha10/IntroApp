@@ -70,10 +70,6 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    @IBAction func skipButtonTapped(){
-        nextQuestion()
-    }
-    
     //質問画面
     func nextQuestion(){
         nowNumber += 1
