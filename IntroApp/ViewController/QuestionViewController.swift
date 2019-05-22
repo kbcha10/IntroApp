@@ -39,7 +39,7 @@ class QuestionViewController: UIViewController {
         isAnsweredLabel.isHidden=true//「回答が入力されていません！」を隠す
         QuestionArray = realm.objects(QuestionModel.self)
         questionLabel.text = QuestionArray[intro.answer[nowNumber].questionNum].question
-        progressLabel.text = String(nowNumber) + "/" + String(intro.answer.count)
+        self.navigationItem.title = String(nowNumber) + "/" + String(intro.answer.count)
         progressBar.progress = Float(nowNumber) / Float(intro.answer.count)
     }
     
@@ -74,7 +74,7 @@ class QuestionViewController: UIViewController {
     func nextQuestion(){
         nowNumber += 1
         answerTextField.text = ""
-        progressLabel.text = String(nowNumber) + "/" + String(intro.answer.count)
+        self.navigationItem.title = String(nowNumber) + "/" + String(intro.answer.count)
         progressBar.setProgress(Float(nowNumber) / Float(intro.answer.count), animated: true)
         
         //次の問題を表示するか

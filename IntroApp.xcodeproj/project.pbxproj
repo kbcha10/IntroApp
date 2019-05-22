@@ -28,6 +28,7 @@
 		C26809102292C36000852066 /* party_cracker.png in Resources */ = {isa = PBXBuildFile; fileRef = C268090F2292C36000852066 /* party_cracker.png */; };
 		C26809122292C4E700852066 /* party_cracker2.png in Resources */ = {isa = PBXBuildFile; fileRef = C26809112292C4E600852066 /* party_cracker2.png */; };
 		C26809162292C6A000852066 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26809152292C6A000852066 /* FinishViewController.swift */; };
+		C268091A2295C10500852066 /* 鉛筆アイコン　5-01.png in Resources */ = {isa = PBXBuildFile; fileRef = C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */; };
 		F09C59FC577686CA2D0FBC55 /* Pods_IntroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F91C8921EC5EBD17FEF87E1 /* Pods_IntroApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		C268090F2292C36000852066 /* party_cracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party_cracker.png; sourceTree = "<group>"; };
 		C26809112292C4E600852066 /* party_cracker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party_cracker2.png; sourceTree = "<group>"; };
 		C26809152292C6A000852066 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鉛筆アイコン　5-01.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				C26809112292C4E600852066 /* party_cracker2.png */,
+				C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */,
 				C268090F2292C36000852066 /* party_cracker.png */,
 				C208BA5D226AF33500C354A7 /* IntroApp */,
 				C208BA5C226AF33500C354A7 /* Products */,
@@ -212,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C268091A2295C10500852066 /* 鉛筆アイコン　5-01.png in Resources */,
 				C208BA69226AF33700C354A7 /* LaunchScreen.storyboard in Resources */,
 				C26809122292C4E700852066 /* party_cracker2.png in Resources */,
 				C200A10F228EA7C100757F04 /* QuestionCell.xib in Resources */,
