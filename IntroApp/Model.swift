@@ -19,6 +19,7 @@ class IntroModel: Object{
     let answer = List<AnswerModel>()
     @objc dynamic var today: String = ""
     @objc dynamic var id = 0
+    @objc dynamic var title: String = ""
 }
 
 class AnswerModel: Object{

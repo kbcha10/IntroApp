@@ -102,28 +102,60 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func starIntroduction(){
-        //新しいIntroモデルの登録
-        let intro = IntroModel()
-        let f = DateFormatter()
-        f.timeStyle = .none
-        f.dateStyle = .medium
-        f.locale = Locale(identifier: "ja_JP")
-        intro.id = IntroArray.count
-        intro.today = f.string(from: Date())
-        try! realm.write{
-            realm.add(intro)
-        }
         
+        //チェックのついている質問の数を数える
+        var countQuestion:Int = 0
         for i in 0..<questionNum.count{
             if(questionNum[i]==1){
-                let answer = AnswerModel()
-                answer.questionNum=i
-                try! realm.write {
-                    intro.answer.append(answer)
-                }
+                countQuestion += 1
             }
         }
-        self.performSegue(withIdentifier: "toQuestionView", sender: nil)
+        //質問が一つ以上あるなら
+        if(countQuestion>0){
+            //新しいIntroモデルの登録
+            let intro = IntroModel()
+            let f = DateFormatter()
+            f.timeStyle = .none
+            f.dateStyle = .medium
+            f.locale = Locale(identifier: "ja_JP")
+            intro.id = IntroArray.count
+            intro.today = f.string(from: Date())
+            let alert = UIAlertController(title: "タイトル", message: "自己紹介のタイトルを入力してください", preferredStyle: .alert)
+            let cancelButton = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
+            let okayButton = UIAlertAction(title: "決定", style: UIAlertAction.Style.default, handler: {[weak alert] (action) -> Void in
+                guard let textFields = alert?.textFields else {
+                    return
+                }
+                guard !textFields.isEmpty else {
+                    return
+                }
+                //追加ボタンを押した時に質問をRealmに保存
+                for text in textFields {
+                    intro.title = text.text!
+                    try! self.realm.write{
+                        self.realm.add(intro)
+                    }
+                }
+                for i in 0..<self.questionNum.count{
+                    if(self.questionNum[i]==1){
+                        let answer = AnswerModel()
+                        answer.questionNum=i
+                        try! self.realm.write {
+                            intro.answer.append(answer)
+                        }
+                    }
+                }
+                self.performSegue(withIdentifier: "toQuestionView", sender: nil)
+            })
+            alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
+                text.placeholder = "タイトルを入力"
+            })
+            
+            alert.addAction(okayButton)
+            alert.addAction(cancelButton)
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     //新しい質問の追加

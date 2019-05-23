@@ -233,13 +233,14 @@
                                     <action selector="nextButtonTapped:" destination="Z2W-1Z-FfL" eventType="touchUpInside" id="3Qr-bb-Y9a"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Stx-r4-LjL">
-                                <rect key="frame" x="97" y="333" width="220" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキストを入力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Stx-r4-LjL">
+                                <rect key="frame" x="97" y="328" width="220" height="40"/>
+                                <color key="backgroundColor" red="0.97691922558326827" green="0.97219980903455683" blue="0.98163864213197971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="a1e-QQ-QLW"/>
                                     <constraint firstAttribute="width" constant="220" id="ael-pw-3Kr"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4dg-9p-2k9">
@@ -289,7 +290,7 @@
         <scene sceneID="b2X-kL-Hex">
             <objects>
                 <tableViewController id="WJ2-rE-GRB" customClass="DateTableViewController" customModule="IntroApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vie-Py-Mp0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vie-Py-Mp0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -302,11 +303,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="6WW-4D-lX6" customClass="DataTableViewCell" customModule="IntroApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="29" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="1" id="nkR-KZ-lcZ">
+                                <rect key="frame" x="0.0" y="29" width="414" height="1"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6WW-4D-lX6" id="LcQ-DS-i8d">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nkR-KZ-lcZ" id="HeT-yY-1kG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -459,6 +460,6 @@
         <image name="鉛筆アイコン　5-01.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xod-3Q-whg"/>
+        <segue reference="43i-rV-eUK"/>
     </inferredMetricsTieBreakers>
 </document>

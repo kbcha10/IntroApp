@@ -10,7 +10,6 @@
 		C200A10E228EA7C100757F04 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A10C228EA7C100757F04 /* QuestionCell.swift */; };
 		C200A10F228EA7C100757F04 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200A10D228EA7C100757F04 /* QuestionCell.xib */; };
 		C200A111228EACD900757F04 /* QuestionChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A110228EACD900757F04 /* QuestionChoiceController.swift */; };
-		C200A115228F37C400757F04 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200A114228F37C400757F04 /* NextViewController.swift */; };
 		C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA5E226AF33500C354A7 /* AppDelegate.swift */; };
 		C208BA61226AF33500C354A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208BA60226AF33500C354A7 /* ViewController.swift */; };
 		C208BA64226AF33500C354A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BA62226AF33500C354A7 /* Main.storyboard */; };
@@ -29,6 +28,7 @@
 		C26809122292C4E700852066 /* party_cracker2.png in Resources */ = {isa = PBXBuildFile; fileRef = C26809112292C4E600852066 /* party_cracker2.png */; };
 		C26809162292C6A000852066 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26809152292C6A000852066 /* FinishViewController.swift */; };
 		C268091A2295C10500852066 /* 鉛筆アイコン　5-01.png in Resources */ = {isa = PBXBuildFile; fileRef = C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */; };
+		C268091E2296383200852066 /* アセット 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C268091D2296383200852066 /* アセット 1.png */; };
 		F09C59FC577686CA2D0FBC55 /* Pods_IntroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F91C8921EC5EBD17FEF87E1 /* Pods_IntroApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,6 @@
 		C200A10C228EA7C100757F04 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		C200A10D228EA7C100757F04 /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		C200A110228EACD900757F04 /* QuestionChoiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceController.swift; sourceTree = "<group>"; };
-		C200A114228F37C400757F04 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		C208BA5B226AF33500C354A7 /* IntroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208BA5E226AF33500C354A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C208BA60226AF33500C354A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		C26809112292C4E600852066 /* party_cracker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party_cracker2.png; sourceTree = "<group>"; };
 		C26809152292C6A000852066 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鉛筆アイコン　5-01.png"; sourceTree = "<group>"; };
+		C268091D2296383200852066 /* アセット 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アセット 1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +96,7 @@
 			children = (
 				C26809112292C4E600852066 /* party_cracker2.png */,
 				C26809192295C10500852066 /* 鉛筆アイコン　5-01.png */,
+				C268091D2296383200852066 /* アセット 1.png */,
 				C268090F2292C36000852066 /* party_cracker.png */,
 				C208BA5D226AF33500C354A7 /* IntroApp */,
 				C208BA5C226AF33500C354A7 /* Products */,
@@ -136,7 +137,6 @@
 				C208BA60226AF33500C354A7 /* ViewController.swift */,
 				C208BA70226B130600C354A7 /* QuestionViewController.swift */,
 				C200A110228EACD900757F04 /* QuestionChoiceController.swift */,
-				C200A114228F37C400757F04 /* NextViewController.swift */,
 				C208BB9E2284139C00C354A7 /* TopViewController.swift */,
 			);
 			path = ViewController;
@@ -223,6 +223,7 @@
 				C208BA64226AF33500C354A7 /* Main.storyboard in Resources */,
 				C208BB8F2283C1E700C354A7 /* DataTableViewCell.xib in Resources */,
 				C208BB9D2283FFB100C354A7 /* IntroduceTableViewCell.xib in Resources */,
+				C268091E2296383200852066 /* アセット 1.png in Resources */,
 				C26809102292C36000852066 /* party_cracker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +291,6 @@
 				C208BB9F2284139C00C354A7 /* TopViewController.swift in Sources */,
 				C200A111228EACD900757F04 /* QuestionChoiceController.swift in Sources */,
 				C208BB932283C6D000C354A7 /* DateTableViewController.swift in Sources */,
-				C200A115228F37C400757F04 /* NextViewController.swift in Sources */,
 				C208BB972283FF2E00C354A7 /* IntroduceTableViewController.swift in Sources */,
 				C208BB9C2283FFB100C354A7 /* IntroduceTableViewCell.swift in Sources */,
 				C208BA5F226AF33500C354A7 /* AppDelegate.swift in Sources */,

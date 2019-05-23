@@ -35,11 +35,9 @@ class DateTableViewController: UITableViewController {
         if editingStyle == .delete {
             try! realm.write {
                 realm.delete(realm.objects(IntroModel.self)[indexPath.row])
+                //id番号をずらす
                 for i in indexPath.row..<IntroArray.count{
-                    print(indexPath.row)
-                    print(IntroArray.count)
                     realm.objects(IntroModel.self)[i].id = realm.objects(IntroModel.self)[i].id-1
-                    print(realm.objects(IntroModel.self)[i].id)
                 }
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -52,7 +50,7 @@ class DateTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DataTableViewCell
         cell.dateLabel!.text = IntroArray[indexPath.row].today
-        
+        cell.titleLabel!.text = IntroArray[indexPath.row].title
         return cell
     }
     //選択された日付の自己紹介を次の画面で表示
