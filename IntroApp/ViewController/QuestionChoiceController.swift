@@ -101,6 +101,20 @@ class QuestionChoiceController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    //セル削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! realm.write {
+                realm.delete(realm.objects(QuestionModel.self)[indexPath.row])
+                //id番号をずらす
+                for i in indexPath.row..<QuestionArray.count{
+                    realm.objects(QuestionModel.self)[i].id = realm.objects(QuestionModel.self)[i].id-1
+                }
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     @IBAction func starIntroduction(){
         
         //チェックのついている質問の数を数える

@@ -12,17 +12,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="KGk-i7-Jjw" customClass="DataTableViewCell" customModule="IntroApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="KGk-i7-Jjw" customClass="DataTableViewCell" customModule="IntroApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="286" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-E2-PZZ">
-                        <rect key="frame" x="100" y="26.5" width="200" height="17"/>
+                        <rect key="frame" x="100" y="26.5" width="166" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アセット 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="C1B-GR-jy7">
@@ -33,7 +33,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkC-WM-a6w">
-                        <rect key="frame" x="100" y="51.5" width="200" height="20.5"/>
+                        <rect key="frame" x="100" y="51.5" width="166" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -41,9 +41,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="SkC-WM-a6w" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="12" id="26R-NS-U7z"/>
-                    <constraint firstAttribute="trailing" secondItem="vBj-E2-PZZ" secondAttribute="trailing" constant="20" id="LHI-ft-Tw6"/>
                     <constraint firstItem="vBj-E2-PZZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-15" id="MiY-wg-Sy2"/>
-                    <constraint firstAttribute="trailing" secondItem="SkC-WM-a6w" secondAttribute="trailing" constant="20" id="NvT-A3-w0c"/>
+                    <constraint firstAttribute="trailing" secondItem="vBj-E2-PZZ" secondAttribute="trailing" constant="20" id="Q31-wK-GVl"/>
+                    <constraint firstAttribute="trailing" secondItem="SkC-WM-a6w" secondAttribute="trailing" constant="20" id="Rte-z1-FTk"/>
                     <constraint firstItem="C1B-GR-jy7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="d2B-iB-xbu"/>
                     <constraint firstItem="SkC-WM-a6w" firstAttribute="leading" secondItem="C1B-GR-jy7" secondAttribute="trailing" constant="10" id="hi5-67-SCa"/>
                     <constraint firstItem="C1B-GR-jy7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jXl-NB-Anx"/>
